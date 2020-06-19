@@ -11,6 +11,14 @@ type Person struct {
 	lastName  string
 }
 
+/*
+func (t *type)printName() {} 表示定义type结构体的方法（相当于java中对象的方法） 可通过示例结构体直接调用
+*/
+func (p *Person) printName() error {
+	fmt.Println("jack")
+	return nil
+}
+
 func upPerson(p *Person) {
 	p.firstName = strings.ToUpper(p.firstName)
 	p.lastName = strings.ToUpper(p.lastName)
@@ -21,6 +29,7 @@ func main() {
 	var pers1 Person
 	pers1.firstName = "Chris"
 	pers1.lastName = "Woodward"
+	pers1.printName()
 	upPerson(&pers1)
 	fmt.Printf("The name of the person is %s %s\n", pers1.firstName, pers1.lastName)
 

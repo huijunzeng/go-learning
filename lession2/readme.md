@@ -24,10 +24,18 @@ type myStruct struct {
     m string
     p float32
 }
+
+//func (t *type)printName() {} 表示定义type结构体的方法（相当于java中对象的方法） 可通过示例结构体直接调用
+func (m *myStruct) printTest() error {
+	fmt.Println("jack")
+	return nil
+}
+
 var v myStruct    // v是结构体类型变量
 var p *myStruct   // p是指向一个结构体类型变量的指针
-v.i
+v.i // 取变量值
 p.i
+v.printName // 调用结构体方法
 ```
 
 初始化一个结构体实例（一个结构体字面量：struct-literal）的更简短和惯用的方式如下：
